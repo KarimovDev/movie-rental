@@ -1,0 +1,8 @@
+.header {
+  margin: 80px auto 0;
+  width: 148px;
+  height: 28px;
+  background-image: url(https://i.postimg.cc/cL4X34f5/logo-tp.png);
+  background-size: cover;
+  @include cursor();
+}

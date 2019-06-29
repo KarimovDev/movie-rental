@@ -1,0 +1,13 @@
+$search-info__elem__text-color: white;
+
+.search-info {
+  height: 48px;
+  margin: 56px auto 0;
+}
+
+.search-info__elem__text {
+  font-style: normal;
+  font-weight: 900;
+  line-height: 48px;
+  color: $search-info__elem__text-color;
+}

@@ -1,0 +1,154 @@
+.search {
+  margin: 126px auto 0;
+  width: 100%;
+  height: 54px;
+}
+
+.search__form {
+  margin: 0 auto;
+  width: 628px;
+  height: 54px;
+  padding: 0 0 18px;
+  box-sizing: border-box;
+  position: relative;
+  border-bottom: 2px solid white;
+
+  &--focused {
+    transition: 0.3s;
+    width: 100%;
+    border-bottom: 2px solid $yellow-color;
+
+    & > .search__form__wrap--input > .search__form__input-wrap > .search__form__input {
+      padding: 0 60px;
+    }
+
+    & > .search__form__wrap--input > .search__form__input-wrap::before {
+      left: 15px;
+    }
+  }
+
+  &--scrolled {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 74px;
+    padding: 20px 10% 18px;
+    transition: none;
+    background: rgba(28, 28, 28, 0.8);
+    backdrop-filter: blur(4px);
+
+    & > .search__form__wrap--input > .search__form__input-wrap > .search__form__input {
+      padding: 0 60px;
+    }
+
+    & > .search__form__wrap--input > .search__form__input-wrap::before {
+      left: 15px;
+    }
+
+    & > .search__form__wrap--reset-button {
+      right: 10%;
+    }
+  }
+}
+
+.search__form__input {
+  width: 100%;
+  border: none;
+  font-weight: 300;
+  line-height: 36px;
+  font-size: 24px;
+  background: transparent;
+  outline: none;
+  color: #ffffff;
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+  position: relative;
+  padding: 0 91px;
+}
+
+.search__form__input-wrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  &::before {
+    content: url(https://i.postimg.cc/vTQmm9fB/Union.png);
+    position: absolute;
+    left: 40px;
+  }
+  &--loading {
+    &::before {
+      content: url(https://i.postimg.cc/vTQmm9fB/Union.png);
+      position: absolute;
+      left: 40px;
+      transform-origin: 14px 14px;
+      animation: 0.5s linear 0s normal none infinite rot;
+    }
+  }
+  @keyframes rot {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.film-box-elem__img {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.img-loaded {
+  opacity: 1;
+}
+
+.search__form__reset-button {
+  position: absolute;
+  margin: 0 0;
+  border: none;
+  padding: 0 0;
+  width: 34px;
+  height: 34px;
+  background: transparent;
+  background-image: url(https://i.postimg.cc/4yYmrTkr/esc.png);
+  background-size: contain;
+  display: none;
+  @include cursor();
+
+  &:hover {
+    opacity: 1;
+    transition: 0.3s;
+  }
+
+  &:not(:hover) {
+    opacity: 0.5;
+    transition: 0.3s;
+  }
+}
+
+.search__form__wrap {
+  position: absolute;
+
+  &--search-button {
+    left: 30px;
+    width: 34px;
+    height: 34px;
+  }
+
+  &--reset-button {
+    right: 0px;
+    width: 34px;
+    height: 34px;
+  }
+
+  &--input {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 100%;
+  }
+}

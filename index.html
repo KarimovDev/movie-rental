@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Тинькофф Прокат</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="shortcut icon"
+      href="https://i.postimg.cc/BnB8nK4z/favicon.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/style.css" />
+  </head>
+
+  <body>
+    <div id="to-top" class="to-top" onClick="toTopFunc()">↑</div>
+    <div class="container">
+      <header>
+        <div class="header"></div>
+      </header>
+
+      <div class="search">
+        <form id="form-box" class="search__form" onsubmit="return onSubmitFunc()">
+          <div class="search__form__wrap search__form__wrap--input">
+            <div class="search__form__input-wrap">
+              <input
+                class="search__form__input"
+                id="search"
+                placeholder="Поиск фильмов по жанрам и актерам"
+                type="text"
+                autocomplete="off"
+                onfocus="onFocusFunc(this)"
+                oninput="onInputFunc(this)"
+              />
+            </div>
+          </div>
+          <div class="search__form__wrap search__form__wrap--reset-button">
+            <button
+              id="reset"
+              class="search__form__reset-button"
+              type="reset"
+              onclick="onClickReset()"
+            ></button>
+          </div>
+        </form>
+      </div>
+
+      <div id="search-helper-id" class="search-helper"></div>
+
+      <div id="search-info-id" class="search-info">
+        <span class="search-info__elem__text"> </span>
+      </div>
+
+      <div class="content-footer-wrap">
+        <div class="content">
+          <div class="film-box"></div>
+        </div>
+        <footer>
+          <div class="footer">
+            <div class="bottom-loader">
+              <span class="dot"></span>
+              <div class="dots">
+                <span class="dots-elem"></span>
+                <span class="dots-elem"></span>
+                <span class="dots-elem"></span>
+              </div>
+            </div>
+            © <current-year>2019</current-year> Тинькофф Прокат
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script type="text/javascript" src="./dist/bundle.js"></script>
+  </body>
+</html>
