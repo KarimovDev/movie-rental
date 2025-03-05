@@ -7,7 +7,8 @@ const apiKey = config.apiKey;
 const extUrl = 'http://www.omdbapi.com';
 
 app.use(express.static(path.join(__dirname)));
-app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
+app.use(express.static(path.join(__dirname, 'dist')));
+// app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'dist', '/index.html')));
 app.get('/api', (req, res) =>
   request({
     url: `${extUrl}${req.url.replace('/api', '')}&apikey=${apiKey}`,
@@ -17,4 +18,4 @@ app.get('/api', (req, res) =>
     .pipe(res),
 );
 
-app.listen(8080);
+app.listen(3005);

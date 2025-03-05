@@ -8,4 +8,5 @@ module.exports = {
   semi: true,
   useTabs: false,
   endOfLine: 'lf',
+  arrowParens: 'avoid'
 };
